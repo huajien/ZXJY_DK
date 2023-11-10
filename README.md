@@ -30,14 +30,37 @@ v.1.3.9版本
 
 1. 下载项目
 
-```cmd
+```
 git clone https://github.com/huajien/ZXJY_DK
 ```
 
 2. 安装依赖 <br>
-pip install requests <br>
-pip install bs4 <br>
-整体结构
+
+  ```
+pip install -r requirements.txt
+  ```
+3. 添加用户 <br>
+`python addUsers.py`
+4. 执行打卡 <br>
+
+自动每天自动打卡
+
+Linux 下使用 `crontab`
+```
+crontab -e
+最后下面添加
+
+56 7 * * * cd /root/ZXJY_DK && python3 main.py >> /root/ZXJY_DK/crontab.log 2>&1
+
+56 7 * * *  代表每天早上7点56开始执行
+
+cd /root/ZXJY_DK 是到打卡代码路
+
+/root/ZXJY_DK/crontab.log 是将运行的结果存到日志里面
+```
+
+
+  整体结构
 ```json
   {
 //   总开关
