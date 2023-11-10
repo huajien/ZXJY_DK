@@ -31,4 +31,4 @@ def LoadUserConfig(user):
                 else:
                     print(returnData)
             else:
-                print('app版本有更新')
+                print('app版本有变化停止自动打卡请前往\n https://github.com/huajien/ZXJY_DK \n 更新新版本')
