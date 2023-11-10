@@ -1,6 +1,5 @@
 import random
 import time
-
 import loadUsers
 import parsUserConfig
 import pushMessage
