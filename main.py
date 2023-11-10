@@ -8,7 +8,9 @@ if __name__ == '__main__':
     AllUsers = loadUsers.loadUserFiles()
     for user in AllUsers:
         try:
-            time.sleep(random.uniform(30, 120))
+            delay = int(random.uniform(30, 120))
+            print(f'{user["remark"]} 延时 ' + str(delay) + ' 秒')
+            time.sleep(delay)
             print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
             print(f'{user["remark"]} 打卡时间 ' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
             parsUserConfig.LoadUserConfig(user)
