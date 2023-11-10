@@ -14,5 +14,5 @@ def loadUserFiles():
         return json.loads(allUsers)
     else:
         localPath = os.listdir(os.getcwd())
-        print(f"\033[31m无法找到 {path} 文件，\n请先执行addUser.py：\n{localPath}\033[0m")
+        print(f"\033[93m无法找到 {path} 文件，\n请先执行addUser.py：\n{localPath}\033[0m")
         return False
