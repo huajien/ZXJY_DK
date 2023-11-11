@@ -15,12 +15,20 @@
 
 ## 使用方式推荐Linux环境
 
-安装python3
+推荐 python >= 3.8
+
+### 2023年11月11日更新
+适配新版本v.1.4.1版本<br>
+更新请求头信息<br>
+加入版本控制软件<br>
+优化一点小bug<br>
+
 
 ### 2023年11月10日 初版：
 
 适配
 v.1.3.9版本
+
 
 #### 特点
 
@@ -37,7 +45,7 @@ git clone https://github.com/huajien/ZXJY_DK
 2. 安装依赖 <br>
 
   ```
-pip install -r requirements.txt
+pip install  -i http://pypi.douban.com/simple/ -r requirements.txt
   ```
 3. 添加用户 <br>
 `python addUsers.py`
