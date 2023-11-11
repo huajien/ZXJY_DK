@@ -19,11 +19,12 @@ def login(user, token):
         "dToken": "0"
     }
 
+    # Sign = sha256Encode.encodeSha256('Anything_2023', json.dumps(data, separators=(',', ':')) + token)
     Sign = sha256Encode.encodeSha256('Anything_2023', json.dumps(data) + token)
     headers = {
         "os": "android",
         "phone": user["deviceModel"],
-        "appversion": "57",
+        "appversion": "59",
         "sign": Sign,
         "timestamp": str(int(time.time() * 1000)),
         "token": token,
@@ -42,7 +43,7 @@ def login(user, token):
             print(f'登录账户 {user["remark"]} 成功')
             return True, data
         else:
-            # print(f'登录状态失败{data["code"]} 错误代码{data["msg"]}')
+            print(f'登录状态失败{data["code"]} 错误代码{data["msg"]}')
             pushMessage.pushMessage('职校家园登录失败',
                                     f'登录账户 {user["remark"]} 登录状态代码{data["code"]} 错误代码{data["msg"]}',
                                     user["pushKey"])
