@@ -59,8 +59,9 @@ crontab -e
 最后下面添加
 
 56 7 * * * cd /root/ZXJY_DK && python3 main.py >> /root/ZXJY_DK/crontab.log 2>&1
-
-56 7 * * *  代表每天早上7点56开始执行
+```
+```解释上面代码
+56 7 * * *  代表每天早上7点56开始执行 可以查一下crontab
 
 cd /root/ZXJY_DK 是到打卡代码路
 
