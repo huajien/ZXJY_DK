@@ -6,7 +6,7 @@ import punchCard
 import time
 
 def LoadUserConfig(user):
-    if not user["enable"]:
+    if not user["enabled"]:
         print(user['remark'], '未启用打卡，即将跳过')
         return False
     else:
