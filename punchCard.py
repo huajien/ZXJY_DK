@@ -1,9 +1,7 @@
 import json
 import random
 import time
-
 import requests
-
 import pushMessage
 import sha256Encode
 
@@ -20,11 +18,12 @@ def clockIn(user, uid, token):
         "longitude": longitude,
         "latitude": latitude
     }
+    # Sign = sha256Encode.encodeSha256('Anything_2023', json.dumps(data, separators=(',', ':')) + token)
     Sign = sha256Encode.encodeSha256('Anything_2023', json.dumps(data) + token)
     headers = {
         "os": "android",
         "phone": user["deviceModel"],
-        "appversion": "57",
+        "appversion": "59",
         "sign": Sign,
         "timestamp": str(int(time.time() * 1000)),
         "token": token,
@@ -35,8 +34,7 @@ def clockIn(user, uid, token):
         "user-agent": "okhttp/3.14.9"
     }
     # print(Sign, user["phone"], token)
-    # url = 'https://sxbaapp.zcj.jyt.henan.gov.cn/api/clockindaily20221202.ashx'
-    url = 'https://sxbaapp.zcj.jyt.henan.gov.cn/api/clockindaily20220827.ashx'
+    url = 'https://sxbaapp.zcj.jyt.henan.gov.cn/api/clockindaily20221202.ashx'
     try:
         response = requests.post(url, headers=headers, data=json.dumps(data))
         response.raise_for_status()
@@ -45,7 +43,7 @@ def clockIn(user, uid, token):
             print(f'{user["remark"]} 打卡成功')
             return True, data
         else:
-            # print(f'登录状态失败{data["code"]} 错误代码{data["msg"]}')
+            print(f'打卡状态失败{data["code"]} 错误代码{data["msg"]}')
             pushMessage.pushMessage('职校家园打卡失败',
                                     f'打卡账户 {user["remark"]} 打卡状态代码{data["code"]} 错误信息{data["msg"]}',
                                     user["pushKey"])
