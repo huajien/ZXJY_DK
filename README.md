@@ -17,6 +17,11 @@
 ## 使用方式推荐Linux环境
 
 推荐 python >= 3.8
+### 2023年11月12日更新
+优化脚本<br>
+升级版本号0.4<br>
+修复不打卡bug<br>
+
 
 ### 2023年11月12日更新
 添加日报周报月报内容由岗位使用gpt自动生成<br>
@@ -105,7 +110,7 @@ cd /root/ZXJY_DK 是到打卡代码路
 ```
 ### 项目协议
 
-本项目基于 [Apache License 2.0](https://github.com/huajien/ZXJY_DK/blob/main/LICENSE) 许可证发行，以下协议是对于 Apache
+本项目基于 [Apache License 2.0](https://github.com/huajien/ZXJY_DK/blob/master/LICENSE) 许可证发行，以下协议是对于 Apache
 License 2.0 的补充，如有冲突，以以下协议为准。
 
 1. 使用本项目的过程中可能会产生版权数据，对于这些版权数据，本项目不拥有它们的所有权，为了避免造成侵权，使用者务必在**24小时
