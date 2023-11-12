@@ -17,10 +17,16 @@
 
 推荐 python >= 3.8
 
+### 2023年11月12日更新
+添加日报周报月报内容由岗位使用gpt自动生成<br>
+升级版本号0.3<br>
+修改一点小问题等<br>
+
 ### 2023年11月11日更新
 适配新版本v.1.4.1版本<br>
 更新请求头信息<br>
 加入版本控制软件<br>
+升级版本号0.2<br>
 优化一点小bug<br>
 
 
@@ -72,25 +78,28 @@ cd /root/ZXJY_DK 是到打卡代码路
   整体结构
 ```json
   {
-//   总开关
+#   总开关
     "enabled": true,
-//   别名
+#   别名
     "remark": "张三",
-//   手机号就是职校家园手机号
+#   手机号就是职校家园手机号
     "phone": "18888888888",
-//   密码职校家密码
+#   密码职校家密码
     "password": "admin",
-//   手机设备型号
+#   手机设备型号
     "deviceModel": "Redmi|22011211C|13",
-//   设备id
+#   设备id
     "deviceId": "io6tkwgdz2mxcsrv0lupq84a9n51j37fhbye",
-//   打卡的位置
+#   打卡的位置
     "address": "河南省郑州市郑东新区正光路11号",
-//   经纬度
+#   经纬度
     "longitude": "113.752490",
     "latitude": "34.768420",
-//   pushplus的推送key
-    "pushKey": "f0fe8fdb8d49490fa6213fc94b9365de"
+#   pushplus的推送key
+    "pushKey": "f0fe8fdb8d49490fa6213fc94b9365de",
+#   报告开关
+    "report": true
+
   }
 ```
 ### 项目协议
