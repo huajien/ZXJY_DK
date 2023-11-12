@@ -1,16 +1,10 @@
 import version
 import pushMessage
-import sha256Encode
 import Login
 import apitoken
-import json
-import random
 import punchCard
-import gptReport
 import time
-import datetime
 import main
-import requests
 import sendReport
 
 def LoadUserConfig(user):
