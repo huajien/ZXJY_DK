@@ -82,30 +82,29 @@ cd /root/ZXJY_DK 是到打卡代码路
 
 
   整体结构
-```json
+```python
   {
-#   总开关
-    "enabled": true,
-#   别名
+    #总开关
+    "enabled": True,
+    #别名
     "remark": "张三",
-#   手机号就是职校家园手机号
+   #手机号就是职校家园手机号
     "phone": "18888888888",
-#   密码职校家密码
+    #密码职校家密码
     "password": "admin",
-#   手机设备型号
+    #手机设备型号
     "deviceModel": "Redmi|22011211C|13",
-#   设备id
+    #设备id
     "deviceId": "io6tkwgdz2mxcsrv0lupq84a9n51j37fhbye",
-#   打卡的位置
+    #打卡的位置
     "address": "河南省郑州市郑东新区正光路11号",
-#   经纬度
+    #经纬度
     "longitude": "113.752490",
     "latitude": "34.768420",
-#   pushplus的推送key
+    #pushplus的推送key
     "pushKey": "f0fe8fdb8d49490fa6213fc94b9365de",
-#   报告开关
-    "report": true
-
+    #报告开关
+    "report": True
   }
 ```
 ### 项目协议
