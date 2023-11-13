@@ -3,6 +3,22 @@
 <h3 align="center">职校家园自动打卡</h3>
 <h3 align="center">根据岗位自动填写日报内容由chatgpt 生成</h3>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-0.4-green?style=flat">
+  <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
+  <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
+  <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
+  <img src="https://img.shields.io/github/forks/huajien/ZXJY_DK?color=teal&style=flat">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Author-HUAJIEN-cyan?style=flat">
+  <img src="https://img.shields.io/badge/Open Source-Yes-cyan?style=flat">
+  <img src="https://img.shields.io/badge/Written In-Bash-cyan?style=flat">
+</p>
+
+
+
 ### 说明
 
 一个基于 python的打卡项目。
