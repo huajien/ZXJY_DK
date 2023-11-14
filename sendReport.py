@@ -24,7 +24,7 @@ def report(user,uid,token):
                 dailyRreportContent = gptReport.gptConfig(
                     f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}日"
                     f"{jobTitleReturnData}"
-                    f"的工作日报只要一小段60字左右返回一段json数据数据中有 实习项目，实习记录，实习总结。三个不要其他的东西")
+                    f"实习的工作日报只要一小段60字左右，返回一段json数据数据中有 实习项目，实习记录，实习总结。三个不要其他的东西")
 
                 dailyDataRreportContent = json.loads(dailyRreportContent)
 
@@ -94,7 +94,7 @@ def report(user,uid,token):
                 try:
                     weeklyRreportContent = gptReport.gptConfig(
                         f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}每周"
-                        f"{jobTitleReturnData}的工作周报只要一小段60字左右返回一段json数据数据中有 实习项目，实习记录，实习总结。三个不要其他的东西")
+                        f"{jobTitleReturnData}实习的工作周报只要一小段60字左右，返回一段json数据数据中有 实习项目，实习记录，实习总结。三个不要其他的东西")
                     weekDataRreportContent = json.loads(weeklyRreportContent)
                     if weekDataRreportContent['实习项目'] and weekDataRreportContent['实习记录'] and \
                             weekDataRreportContent['实习总结']:
@@ -164,7 +164,7 @@ def report(user,uid,token):
                 try:
                     monthlyRreportContent = gptReport.gptConfig(
                         f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}每周"
-                        f"{jobTitleReturnData}的工作月报告只要一小段60字左右返回一段json数据数据中有 实习项目，实习记录，实习总结。三个不要其他的东西")
+                        f"{jobTitleReturnData}实习的工作月报告只要一小段60字左右，返回一段json数据数据中有 实习项目，实习记录，实习总结。三个不要其他的东西")
                     monthlyDataRreportContent = json.loads(monthlyRreportContent)
                     if monthlyDataRreportContent['实习项目'] and monthlyDataRreportContent[
                         '实习记录'] and monthlyDataRreportContent['实习总结']:
