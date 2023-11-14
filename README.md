@@ -30,9 +30,15 @@
 - Linux
 - 等平台
 
-## 使用方式推荐Linux环境
+## 使用方式
 
-推荐 python >= 3.8
+推荐**Linux**环境下使用
+python >= 3.8
+
+### 2023年11月14日更新
+优化token请求头<br>
+不升级版本号小更新<br>
+
 ### 2023年11月12日更新
 优化脚本<br>
 升级版本号0.4<br>
@@ -66,29 +72,37 @@ v.1.3.9版本
 
 1. 下载项目
 
-```
+```bash
 git clone https://github.com/huajien/ZXJY_DK
 ```
 
 2. 安装依赖 <br>
 
-  ```
+```bash
 pip install  -i http://pypi.douban.com/simple/ -r requirements.txt
-  ```
-3. 添加用户 <br>
-`python addUsers.py`
-4. 执行打卡 <br>
-
-自动每天自动打卡
-
-Linux 下使用 `crontab`
 ```
+3. 添加用户 <br>
+```bash
+ python3 addUsers.py
+ ```
+
+4. 执行打卡 <br>
+```bash
+ python3 main.py
+```
+
+### 配置每天自动打卡
+
+Linux 下使用推荐使用 `crontab`
+```bash
 crontab -e
 最后下面添加
 
 56 7 * * * cd /root/ZXJY_DK && python3 main.py >> /root/ZXJY_DK/crontab.log 2>&1
 ```
-```解释上面代码
+
+```bash
+解释上面代码
 56 7 * * *  代表每天早上7点56开始执行 可以查一下crontab
 
 cd /root/ZXJY_DK 是到打卡代码路
