@@ -1,4 +1,4 @@
-requests==2.28.2
-beautifulsoup4==4.11.2
-openai==0.28
-cChardet==2.1.7
+requests
+beautifulsoup4
+openai
+cChardet
