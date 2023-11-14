@@ -4,7 +4,7 @@
 <h3 align="center">根据岗位自动填写日报内容由chatgpt 生成</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.4-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.42-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -34,6 +34,12 @@
 
 推荐**Linux**环境下使用
 python >= 3.8
+
+### 2023年11月14日晚更新
+优化*addUsers.py*文件<br>
+升级版本号0.42<br>
+优化README使用教程
+
 
 ### 2023年11月14日更新
 优化token请求头<br>
@@ -70,49 +76,73 @@ v.1.3.9版本
 软件更新自动停止打卡不会出现异常等情况随机延迟
 
 使用方式
-
+**需要提前下载`Python3`**
 1. 下载项目
 
 ```bash
-git clone https://github.com/huajien/ZXJY_DK
+cd ~
+git clone https://github.huajinet.cf/https://github.com/huajien/ZXJY_DK
 ```
 
 2. 安装依赖 <br>
 
 ```bash
-pip install  -i http://pypi.douban.com/simple/ -r requirements.txt
+cd ZXJY_DK
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+**如果不行使用**
+pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
 3. 添加用户 <br>
 ```bash
- python3 addUsers.py
- ```
+python3 addUsers.py
+```
 
-4. 执行打卡 <br>
+4. 执行单此多用户打卡 <br>
+**tips:第一次执行一定要先执行addusers.py文件** <br>
 ```bash
  python3 main.py
 ```
 
-### 配置每天自动打卡
+### 配置每天定时自动打卡
 
 Linux 下使用推荐使用 `crontab`
+
 ```bash
 crontab -e
 最后下面添加
 
-56 7 * * * cd /root/ZXJY_DK && python3 main.py >> /root/ZXJY_DK/crontab.log 2>&1
+56 7 * * * cd ~/ZXJY_DK && python3 main.py >> /~/ZXJY_DK/crontab.log 2>&1
 ```
 
+例子：
+```text
+
+    # 每月的最后1天
+    0 0 L * * *
+
+    说明：
+    Linux
+    *    *    *    *    *
+    -    -    -    -    -
+    |    |    |    |    |
+    |    |    |    |    +----- day of week (0 - 7) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+    |    |    |    +---------- month (1 - 12) OR jan,feb,mar,apr ...
+    |    |    +--------------- day of month (1 - 31)
+    |    +-------------------- hour (0 - 23)
+    +------------------------- minute (0 - 59)
+```
 ```bash
 解释上面代码
 56 7 * * *  代表每天早上7点56开始执行 可以查一下crontab
 
-cd /root/ZXJY_DK 是到打卡代码路
+cd ~/ZXJY_DK 是到打卡代码路
 
-/root/ZXJY_DK/crontab.log 是将运行的结果存到日志里面
+~/ZXJY_DK/crontab.log 是将运行的结果存到日志里面
 ```
 
 
-  整体结构
+整体**userData.json**文件结构
 ```python
   {
     #总开关
