@@ -600,7 +600,7 @@ if __name__ == '__main__':
     else:
         reportSwitch = 1
 
-    if reportSwitch:
+    if reportSwitch and report:
         pattern = re.compile(r'^sk-[a-zA-Z0-9]{48}$')
         while True:
             print("获取 key https://api.chatanywhere.org/v1/oauth/free/github/render ")
@@ -615,15 +615,12 @@ if __name__ == '__main__':
             else:
                 print("key格式错误，请重新输入。\n")
 
-        userdata = checkUserData(filename, enabled, name, phone, password,
+    userdata = checkUserData(filename, enabled, name, phone, password,
                                  deviceModel, address,
                                  PushPlus_token, report)
-        print(
-            f"添加时间 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())} 用户信息姓名{name} 手机号{phone} 密码{password} 手机型号{deviceModel} 打卡位置 {address}")
-        pushMessage.pushMessage(f"添加{name}用户成功",
-                                f"开关{enabled} 别名{name} 手机号 {phone} 密码{password} 设备型号{deviceModel} 打卡位置{address}",
-                                PushPlus_token)
-    else:
-        userdata = checkUserData(filename, enabled, name, phone, password,
-                                 deviceModel, address,
-                                 PushPlus_token, report)
+    print(
+        f"添加时间 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())} "
+        f"打卡开关{enabled} 报告开关{report} 别名{name} 手机号 {phone} 密码{password} 打卡位置{address}")
+    pushMessage.pushMessage(f"添加{name}用户成功",
+                            f"打卡开关{enabled} 报告开关{report} 别名{name} 手机号 {phone} 密码{password} 打卡位置{address}",
+                            PushPlus_token)
