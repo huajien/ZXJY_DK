@@ -4,7 +4,7 @@
 <h3 align="center">根据岗位自动填写日报内容由chatgpt 生成</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.42-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.43-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -30,15 +30,16 @@
 - Linux
 - 等平台
 
-## 使用方式
-
-推荐**Linux**环境下使用
-python >= 3.8
+## 更新日志
+### 2023年11月15日更新
+优化*addUsers.py*文件<br>
+升级版本号0.43<br>
+优化README<br>
 
 ### 2023年11月14日晚更新
 优化*addUsers.py*文件<br>
 升级版本号0.42<br>
-优化README使用教程
+优化README使用教程<br>
 
 
 ### 2023年11月14日更新
@@ -69,6 +70,11 @@ python >= 3.8
 
 适配
 v.1.3.9版本
+
+## 使用方式
+
+推荐**Linux**环境下使用
+python >= 3.8
 
 
 #### 特点
