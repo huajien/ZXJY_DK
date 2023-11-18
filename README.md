@@ -1,7 +1,7 @@
 <h1 align="center">ZXJY_DK</h3>
 
 <h3 align="center">职校家园自动打卡</h3>
-<h3 align="center">根据岗位自动填写日报内容由chatgpt 生成</h3>
+<h3 align="center">根据岗位自动填写日报内容由ChatGPT 生成</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-0.44-green?style=flat">
