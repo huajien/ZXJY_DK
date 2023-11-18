@@ -13,6 +13,6 @@ def loadUserFiles():
                 allUsers = allUsers + line + '\n'
         return json.loads(allUsers)
     else:
-        localPath = os.listdir(os.getcwd())
-        print(f"\033[93m无法找到 {path} 文件，\n请先执行addUser.py：\n{localPath}\033[0m")
+        # localPath = os.listdir(os.getcwd())
+        print(f"\033[93m无法找到 {path} 文件。\n或者使用 addUser.py 文件添加用户\033[0m")
         return False
