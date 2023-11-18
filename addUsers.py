@@ -544,15 +544,16 @@ def getDeviceModel():
     ]
     return random.choice(models)
 
-if __name__ == '__main__':
+def main():
     filename = "userData.json"
     if not os.path.exists(filename):
         with open(filename, 'w') as f:
             json.dump([], f)
-    enabled = input("是否开启打卡y or n（默认y）：")
-    if enabled == "y" or enabled == "Y":
+    print("\033[7m当前正在添加打卡用户中\033[0m")
+    enabled = input("是否开启打卡（y or n，默认y）：").lower()
+    if enabled == "y":
         enabled = True
-    elif enabled == "n" or enabled == "N":
+    elif enabled == "n":
         enabled = False
     else:
         enabled = True
@@ -580,16 +581,16 @@ if __name__ == '__main__':
     # 推送push
     PushPlus_token = input("PushPlus_token: ")
     # 报告开关
-    report = input("是否开启日报周报月报 y or n（默认y）：")
-    if report == "y" or report == "Y":
+    report = input("是否开启日报周报月报 y or n（默认y）：").lower()
+    if report == "y":
         report = True
-    elif report == "n" or report == "N":
+    elif report == "n":
         report = False
     else:
         report = True
-    path = os.getcwd() + os.sep + "aiReport.json"
-    if os.path.exists(path):
-        with open(path, 'r') as f:
+    pathGPT = os.getcwd() + os.sep + "aiReport.json"
+    if os.path.exists(pathGPT):
+        with open(pathGPT, 'r') as f:
             data = json.load(f)
         for entry in data:
             if "api_key" in entry:
@@ -609,13 +610,13 @@ if __name__ == '__main__':
                 newdata = [{
                     "api_key": api_key
                 }]
-                with open(path, 'w') as f:
+                with open(pathGPT, 'w') as f:
                     json.dump(newdata, f, indent=2)
                 break
             else:
                 print("key格式错误，请重新输入。\n")
 
-    userdata = checkUserData(filename, enabled, name, phone, password,
+    checkUserData(filename, enabled, name, phone, password,
                                  deviceModel, address,
                                  PushPlus_token, report)
     print(
@@ -624,3 +625,6 @@ if __name__ == '__main__':
     pushMessage.pushMessage(f"添加{name}用户成功",
                             f"打卡开关{enabled} 报告开关{report} 别名{name} 手机号 {phone} 密码{password} 打卡位置{address}",
                             PushPlus_token)
+
+if __name__ == '__main__':
+    main()
