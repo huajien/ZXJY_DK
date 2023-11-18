@@ -109,13 +109,13 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 **如果不行使用**
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
-3. 添加用户 <br>
+3. 单独添加用户<br>
 ```bash
 python3 addUsers.py
+**tips：可以直接执行main添加用户更加人性化😎**
 ```
 
 4. 执行单此多用户打卡 <br>
-**tips:第一次执行一定要先执行addusers.py文件** <br>
 ```bash
  python3 main.py
 ```
