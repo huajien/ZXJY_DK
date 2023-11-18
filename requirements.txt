@@ -2,3 +2,4 @@ requests>=2.26.0
 beautifulsoup4>=4.9.0
 openai>=0.28
 cChardet>=1.1.0
+inputimeout>=1.0.0
