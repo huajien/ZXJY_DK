@@ -38,6 +38,7 @@ def main():
     if addUserChoice == "y":
         addUsers.main()
     else:
+        AllUsers = loadUsers.loadUserFiles()
         winmain(AllUsers)
 
 if __name__ == '__main__':
