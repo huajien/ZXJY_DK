@@ -4,7 +4,7 @@
 <h3 align="center">根据岗位自动填写日报内容由ChatGPT 生成</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.44-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.45-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -34,10 +34,10 @@
 此项目由**HUAJIEN**自己个人学习开发使用<br>
 开发如有引用其他项目的代码会在代码中声明作者<br>
 如引用的 addusers.py<br>
-[![owSR1c.md.png](IMAGES/owSR1c.md.png)](https://vip.helloimg.com/images/2023/11/19/owSZlq.md.png)
+[![owSR1c.md.png](IMAGES/owSR1c.md.png)](https://vip.helloimg.com/images/2023/11/19/owSZlq.md.png)<br>
 不要自己给自己带高帽子<br>
 不要认为什么项目都是别人copy你的<br>
-[![owSR1c.md.png](IMAGES/owSZlq.md.png)](https://vip.helloimg.com/images/2023/11/19/owSR1c.md.png)
+[![owSR1c.md.png](IMAGES/owSZlq.md.png)](https://vip.helloimg.com/images/2023/11/19/owSR1c.md.png)<br>
 已经清空（zy***10）作者adduser.py代码<br>
 **不点名了**<br>
 职校家园个人分析思路<br>
@@ -50,6 +50,15 @@
 使用黄鸟分析请求<br>
 
 ## 更新日志
+
+###  2023年11月19日晚更新
+- 优化消息推送提示<br>
+- 优化登录提示<br>
+- 调整用户可以**只打卡或者只写日报周报月报**<br>
+- **优化登录提示**<br>
+- 修复**main.py**来回调用<br>
+- 固定openai版本定在**0.28.0**<br>
+- **版本升级至0.45**：版本号更新，包含了最新的改进。
 
 ###  2023年11月19日更新
 - 清空**（zy***10）**作者adduser.py代码<br>
