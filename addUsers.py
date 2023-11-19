@@ -10,17 +10,17 @@ import requests
 
 import pushMessage
 
+
+#思路来源：https://github.com/zycn0910/Sign-ZXJY/blob/master/AddUser.py
+#更适合用户的addUsers.py
+
 path = os.getcwd() + os.sep
-
-
-def write_user(filename, newdata):
-    with open(filename, 'r', encoding='utf-8') as f:
-        olddata = f.read()
-    olddata = json.loads(olddata)
-    olddata.extend(newdata)
-    with open(filename, 'w', encoding='utf-8') as write_f:
-        write_f.write(json.dumps(olddata, indent=2, ensure_ascii=False))
-
+def writeUserData(userDataFile, newUserData):
+    with open(userDataFile, 'r', encoding='utf-8') as readFile:
+        oldUserData = json.load(readFile)
+    oldUserData.extend(newUserData)
+    with open(userDataFile, 'w', encoding='utf-8') as writeUserFile:
+        json.dump(oldUserData, writeUserFile, indent=2, ensure_ascii=False)
 
 def obtainCoordinates(address):
     key = "UGMBZ-CINWR-DDRW5-W52AK-D3ENK-ZEBRC"
@@ -36,10 +36,10 @@ def obtainCoordinates(address):
         1)
 
 
-def checkUserData(filename, enabled, remark, phone, password, deviceModel, address, PushPlus_token, report):
+def writeUserDataFile(userDataFile, enabled, remark, phone, password, deviceModel, address, pushPlusToken, report):
     deviceId = ''.join(random.choice(string.digits + 'abcdef') for _ in range(36))
     longitude, latitude = obtainCoordinates(address)
-    newdata = [
+    newUserData = [
         {
             "enabled": enabled,
             "remark": remark,
@@ -50,15 +50,13 @@ def checkUserData(filename, enabled, remark, phone, password, deviceModel, addre
             "address": address,
             "longitude": longitude,
             "latitude": latitude,
-            "pushKey": PushPlus_token,
+            "pushKey": pushPlusToken,
             "report": report
         }
     ]
-    write_user(filename=filename, newdata=newdata)
+    writeUserData(userDataFile, newUserData)
 
 
-# 职家家园添加用户
-# 来源 https://github.com/zycn0910/Sign-ZXJY
 
 def getDeviceModel():
     models = [
@@ -545,18 +543,13 @@ def getDeviceModel():
     return random.choice(models)
 
 def main():
-    filename = "userData.json"
-    if not os.path.exists(filename):
-        with open(filename, 'w') as f:
-            json.dump([], f)
+    userDataFile = "userData.json"
+    if not os.path.exists(userDataFile):
+        with open(userDataFile, 'w') as file:
+            json.dump([], file)
     print("\033[7m当前正在添加打卡用户中\033[0m")
     enabled = input("是否开启打卡（y or n，默认y）：").lower()
-    if enabled == "y":
-        enabled = True
-    elif enabled == "n":
-        enabled = False
-    else:
-        enabled = True
+    enabled = True if enabled == "y" else False if enabled == "n" else True
     name = input("输入例如(张三)：")
     while True:
         pattern = re.compile(r'^1[3-9]\d{9}$')
@@ -568,8 +561,8 @@ def main():
     # 密码
     while True:
         password = input("请输入密码：")
-        password_confirm = input("再次输入密码进行确认：")
-        if password_confirm == password:
+        passwordConfirm = input("再次输入密码进行确认：")
+        if passwordConfirm == password:
             print("密码设置成功！")
             break
         else:
@@ -577,27 +570,17 @@ def main():
     # 手机型号
     deviceModel = getDeviceModel()
     # 打卡地址
-    address = input("输入打卡地址请输入公司地址\n例如河南省郑州市郑东新区正光路\n:")
+    address = input("输入公司地址也就是公司打卡位置\n例如(河南省郑州市郑东新区正光路)\n:")
     # 推送push
-    PushPlus_token = input("PushPlus_token: ")
+    pushPlusToken = input("pushPlusToken: ")
     # 报告开关
     report = input("是否开启日报周报月报 y or n（默认y）：").lower()
-    if report == "y":
-        report = True
-    elif report == "n":
-        report = False
-    else:
-        report = True
+    report = True if report == "y" else False if report == "n" else True
     pathGPT = os.getcwd() + os.sep + "aiReport.json"
     if os.path.exists(pathGPT):
         with open(pathGPT, 'r') as f:
             data = json.load(f)
-        for entry in data:
-            if "api_key" in entry:
-                reportSwitch = 0
-                break
-            else:
-                reportSwitch = 1
+        reportSwitch = 0 if any("api_key" in entry for entry in data) else 1
     else:
         reportSwitch = 1
 
@@ -607,24 +590,24 @@ def main():
             print("获取 key https://api.chatanywhere.org/v1/oauth/free/github/render ")
             api_key = input("输入你的key：")
             if pattern.search(api_key):
-                newdata = [{
+                newUserData = [{
                     "api_key": api_key
                 }]
                 with open(pathGPT, 'w') as f:
-                    json.dump(newdata, f, indent=2)
+                    json.dump(newUserData, f, indent=2)
                 break
             else:
                 print("key格式错误，请重新输入。\n")
 
-    checkUserData(filename, enabled, name, phone, password,
+    writeUserDataFile(userDataFile, enabled, name, phone, password,
                                  deviceModel, address,
-                                 PushPlus_token, report)
+                                 pushPlusToken, report)
     print(
         f"添加时间 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())} "
         f"打卡开关{enabled} 报告开关{report} 别名{name} 手机号 {phone} 密码{password} 打卡位置{address}")
     pushMessage.pushMessage(f"添加{name}用户成功",
                             f"打卡开关{enabled} 报告开关{report} 别名{name} 手机号 {phone} 密码{password} 打卡位置{address}",
-                            PushPlus_token)
+                            pushPlusToken)
 
 if __name__ == '__main__':
     main()
