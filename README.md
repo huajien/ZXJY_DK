@@ -30,27 +30,31 @@
 - Linux
 - 等平台
 
+### **声明：**
+此项目由**HUAJIEN**自己个人学习开发使用<br>
+开发如有引用其他项目的代码会在代码中声明作者<br>
+如引用的 addusers.py<br>
+[![owSR1c.md.png](IMAGES/owSR1c.md.png)](https://vip.helloimg.com/images/2023/11/19/owSZlq.md.png)
+不要自己给自己带高帽子<br>
+不要认为什么项目都是别人copy你的<br>
+[![owSR1c.md.png](IMAGES/owSZlq.md.png)](https://vip.helloimg.com/images/2023/11/19/owSR1c.md.png)
+已经清空（zy***10）作者adduser.py代码<br>
+**不点名了**<br>
+职校家园个人分析思路<br>
+方法1.使用frida-dexdump进行脱壳<br>
+使用frida-trace进行hook<br>
+分析frida-trace的源码<br>
+使用流量转到电脑bp请求<br>
+方法2.使用手机端配置黄鸟算法助手<br>
+使用算法助手分析加密算法<br>
+使用黄鸟分析请求<br>
+
 ## 更新日志
 
 ###  2023年11月19日更新
-- **声明：**
-- 此项目由**HUAJIEN**自己个人学习开发使用
-- 开发如有引用其他项目的代码会在代码中声明作者
-- 如引用的 addusers.py
-- [![owSR1c.md.png](IMAGES/owSR1c.md.png)](https://vip.helloimg.com/images/2023/11/19/owSZlq.md.png)
-- 不要自己给自己带高帽子
-- 不要认为什么项目都是别人copy你的
-- [![owSR1c.md.png](IMAGES/owSZlq.md.png)](https://vip.helloimg.com/images/2023/11/19/owSR1c.md.png)
-- **不点名了**
-- 职校家园个人分析思路
-- 方法1.使用frida-dexdump进行脱壳
-- 使用frida-trace进行hook
-- 分析frida-trace的源码
-- 使用流量转到电脑bp请求
-- 方法2.使用手机端配置黄鸟算法助手
-- 使用算法助手分析加密算法
-- 使用黄鸟分析请求
-
+- 清空**（zy***10）**作者adduser.py代码<br>
+- 不升级版本号<br>
+- 很不爽好自大的**（zy***10）**作者<br>
 
 ###  2023年11月18日更新
 
