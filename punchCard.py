@@ -41,11 +41,18 @@ def clockIn(user, uid, token):
         data = response.json()
         if (data["code"] == 1001):
             print(f'{user["remark"]} 打卡成功')
+            pushMessage.pushMessage('职校家园打卡成功提醒',
+                                    f"职校家园 {user['remark']} {time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}日 {user['remark']} ",
+                                    user["pushKey"])
             return True, data
         else:
-            print(f'打卡状态失败{data["code"]} 错误代码{data["msg"]}')
-            pushMessage.pushMessage('职校家园打卡失败',
-                                    f'打卡账户 {user["remark"]} 打卡状态代码{data["code"]} 错误信息{data["msg"]}',
+            print(
+                f"打卡账户 {user['remark']} 打卡状态代码{data['code']} 错误信息{data['msg']}"
+                f"{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}日 打卡失败")
+            pushMessage.pushMessage('职校家园打卡失败提醒',
+                                    f"打卡账户 {user['remark']} 打卡状态代码{data['code']} "
+                                    f"错误信息{data['msg']}{time.strftime('%Y')}年{time.strftime('%m')}月"
+                                    f"{time.strftime('%d')}日 打卡失败",
                                     user["pushKey"])
             return False, f'打卡账户 {user["remark"]} 打卡状态代码{data["code"]} 错误信息{data["msg"]}'
     except requests.exceptions.RequestException as error:
