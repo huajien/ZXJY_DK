@@ -12,7 +12,7 @@ import pushMessage
 
 
 #思路来源：https://github.com/zycn0910/Sign-ZXJY/blob/master/AddUser.py
-#更适合用户的addUsers.py
+#我的更适合用户的addUsers.py
 
 path = os.getcwd() + os.sep
 def writeUserData(userDataFile, newUserData):
