@@ -7,7 +7,7 @@ from inputimeout import inputimeout, TimeoutOccurred
 import addUsers
 
 
-def main(AllUsers):
+def winmain(AllUsers):
     for user in AllUsers:
         try:
             delay = int(random.uniform(30, 120))
@@ -24,7 +24,8 @@ def main(AllUsers):
                                         error), user["pushKey"])
 
 
-if __name__ == '__main__':
+
+def main():
     AllUsers = loadUsers.loadUserFiles()
     if not AllUsers:
         addUsers.main()
@@ -37,4 +38,7 @@ if __name__ == '__main__':
     if addUserChoice == "y":
         addUsers.main()
     else:
-        main(AllUsers)
+        winmain(AllUsers)
+
+if __name__ == '__main__':
+    main()
