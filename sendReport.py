@@ -84,7 +84,10 @@ def report(user,uid,token):
                     retry_count += 1
             except Exception as error:
                 print(f"未找到 Error: {error}")
-                retry_count += 1
+                pushMessage.pushMessage('职校家园失败',
+                                        f"发生错误异常未找到：{error}",
+                                        user["pushKey"])
+                return  False, f"发生错误异常未找到：{error}"
 
         # ----------------------------周报
         if datetime.datetime.now().weekday() == 6:
@@ -155,7 +158,10 @@ def report(user,uid,token):
                         retry_count += 1
                 except Exception as error:
                     print(f"未找到 Error: {error}")
-                    retry_count += 1
+                    pushMessage.pushMessage('职校家园失败',
+                                            f"发生错误异常未找到：{error}",
+                                            user["pushKey"])
+                    return False, f"发生错误异常未找到：{error}"
         # ---------------------------- 月报
         if isLastDayOfMonth:
             print(f"用户{user['remark']} 开启月报")
@@ -225,7 +231,10 @@ def report(user,uid,token):
                         retry_count += 1
                 except Exception as error:
                     print(f"未找到 Error: {error}")
-                    retry_count += 1
+                    pushMessage.pushMessage('职校家园失败',
+                                            f"发生错误异常未找到：{error}",
+                                            user["pushKey"])
+                    return False, f"发生错误异常未找到：{error}"
     return True
 if __name__ == '__main__':
     main.main()

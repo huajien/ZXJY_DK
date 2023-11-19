@@ -64,7 +64,7 @@ def getJobTitle(user,uid,token):
         except KeyError as error:
             print(f"找不到{error}键对应数据")
     except requests.exceptions.RequestException as error:
-        return error
+        return f"找不到{error}键对应数据"
 
 
 
