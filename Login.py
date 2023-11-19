@@ -50,5 +50,6 @@ def login(user, token):
             return False, f'登录账户 {user["remark"]} 登录状态代码{data["code"]} 错误代码{data["msg"]}'
 
     except requests.exceptions.RequestException as error:
-        pushMessage.pushMessage('职校家园打卡失败', f"发生请求异常：{error} 请求登录异常", user["pushKey"])
-        return False, f"发生请求异常：{error}", "请求登录异常"
+        pushMessage.pushMessage('职校家园请求登录失败', f"发生请求异常：{error} 请求登录异常", user["pushKey"])
+        return False, f"发生请求异常：{error} 请求登录异常"
+
