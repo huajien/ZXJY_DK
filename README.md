@@ -32,6 +32,26 @@
 
 ## 更新日志
 
+###  2023年11月19日更新
+- **声明：**
+- 此项目由**HUAJIEN**自己个人学习开发使用
+- 开发如有引用其他项目的代码会在代码中声明作者
+- 如引用的 addusers.py
+- https://vip.helloimg.com/images/2023/11/19/owSZlq.md.png
+- 不要自己给自己带高帽子
+- 不要认为什么项目都是别人copy你的
+- [![owSR1c.md.png](https://vip.helloimg.com/images/2023/11/19/owSR1c.md.png)](https://www.helloimg.com/image/owSR1c)
+- **不点名了**
+- 职校家园个人分析思路
+- 方法1.使用frida-ios-dump进行脱壳
+- 使用frida-trace进行hook
+- 分析frida-trace的源码
+- 使用流量转到电脑bp请求
+- 方法2.使用手机端配置黄鸟算法助手
+- 使用算法助手分析加密算法
+- 使用黄鸟分析请求
+
+
 ###  2023年11月18日更新
 
 - **addUsers.py文件优化**：通过简化调用方式，使其更易使用。
