@@ -1,5 +1,4 @@
-<h1 align="center">ZXJY_DK</h3>
-
+<h1 align="center">ZXJY_DK</h1>
 <h3 align="center">职校家园自动打卡</h3>
 <h3 align="center">根据岗位自动填写日报内容由ChatGPT 生成</h3>
 
@@ -29,6 +28,8 @@
 - Mac OS
 - Linux
 - 等平台
+- `推荐Linux环境下运行`
+- `python >= 3.8`
 
 ### **声明：**
 此项目由**HUAJIEN**自己个人学习开发使用<br>
@@ -49,7 +50,15 @@
 使用算法助手分析加密算法<br>
 使用黄鸟分析请求<br>
 
-## 更新日志
+<details>
+
+<summary>点击展开历史更新记录</summary>
+
+###  2023年11月24日更新
+优化crontab 日志信息<br>
+优化更新信息折叠<br>
+去除cChardet库<br>
+
 
 ###  2023年11月19日晚更新
 - 优化消息推送提示<br>
@@ -116,10 +125,11 @@
 
 - **适配v.1.3.9版本**：脚本适配了v.1.3.9版本。
 
-## 使用方式
 
-推荐**Linux**环境下使用
-python >= 3.8
+</details>
+
+
+## 使用教程
 
 
 #### 特点
@@ -163,7 +173,7 @@ Linux 下使用推荐使用 `crontab`
 crontab -e
 最后下面添加
 
-56 7 * * * cd ~/ZXJY_DK && python3 main.py >> /~/ZXJY_DK/crontab.log 2>&1
+56 7 * * * cd ~/ZXJY_DK && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
 ```
 
 例子：
@@ -185,11 +195,19 @@ crontab -e
 ```
 ```bash
 解释上面代码
-56 7 * * *  代表每天早上7点56开始执行 可以查一下crontab
+56 7 * * *  
+代表每天早上7点56开始执行 
+可以查一下crontab相关知识
 
-cd ~/ZXJY_DK 是到打卡代码路
+cd ~/ZXJY_DK 
+是到打卡代码路径
 
-~/ZXJY_DK/crontab.log 是将运行的结果存到日志里面
+mkdir -p log 
+如果不存在log目录就创建一个log路径
+
+log/$(date +"\%Y-\%m-\%d").log 2>&1 
+是将运行的结果存到log/2023-11-24.log
+日志文件里面可以查看每日的信息
 ```
 
 
