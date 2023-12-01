@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.45-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.46-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
