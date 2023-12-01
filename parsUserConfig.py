@@ -1,17 +1,22 @@
 import version
-import pushMessage
 import Login
 import apitoken
 import punchCard
 import time
 import main
 import sendReport
+import random
 
 def LoadUserConfig(user):
     if not user["enabled"]:
         print(user['remark'], '未启用打卡，即将跳过')
     else:
         print('用户' + user['remark'], '已启用，即将打卡')
+        delay = int(random.uniform(60, 120))
+        # delay = int(1)
+        print(f'{user["remark"]} 延时 ' + str(delay) + ' 秒')
+        time.sleep(delay)
+        print(f'{user["remark"]} 打卡时间 ' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         getApiState, getApiToken = apitoken.get_apitoken()
 
         if not getApiState:
@@ -31,7 +36,13 @@ def LoadUserConfig(user):
     if not user["report"]:
         print(user['report'], '未启用日报周报月报，即将跳过')
     else:
-        print('用户' + user['remark'], '已启用，即将打卡')
+        print('用户' + user['remark'], '已启用，即将填写日报周报月报')
+        delay = int(random.uniform(60, 120))
+        # delay = int(1)
+        print(f'{user["remark"]} 延时 ' + str(delay) + ' 秒')
+        time.sleep(delay)
+        print(f'{user["remark"]} 报告时间 ' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+
         getApiState, getApiToken = apitoken.get_apitoken()
 
         if not getApiState:
