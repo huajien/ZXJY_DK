@@ -189,6 +189,15 @@ log/$(date +"\%Y-\%m-\%d").log 2>&1
 
 ## 更新信息
 
+###  2023年12月01日更新
+- addUsers.py**文件优化对其**<br>
+- sendReport.py**增加ChatGPT请求时间**<br>
+- main.py**去除无用的库和代码**<br>
+- parsUserConfig.py**去除无用的库添加random和延迟执行代码**<br>
+- sendReport.py**重构整个ChatGPT报告转换**<br>
+- requirements.txt**添加urllib3将固定固定在1.25版本**<br>
+- **版本升级至0.46**：版本号更新，包含了最新的改进。<br>
+
 ###  2023年11月24日更新
 - 优化crontab 日志信息<br>
 - 优化README.md文件更好阅读<br>
