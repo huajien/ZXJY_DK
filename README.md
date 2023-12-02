@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.46-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.47-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -189,9 +189,14 @@ log/$(date +"\%Y-\%m-\%d").log 2>&1
 
 ## 更新信息
 
+###  2023年12月02日更新
+- sendReport.py**修复无法日报问题,加入三次ChatGPT重试**<br>
+- **版本升级至0.47**：版本号更新，包含了最新的修复日报错误。<br>
+
+
 ###  2023年12月01日更新
 - addUsers.py**文件优化对其**<br>
-- sendReport.py**增加ChatGPT请求时间**<br>
+- gptReport.py**增加ChatGPT请求时间**<br>
 - main.py**去除无用的库和代码**<br>
 - parsUserConfig.py**去除无用的库添加random和延迟执行代码**<br>
 - sendReport.py**重构整个ChatGPT报告转换**<br>
