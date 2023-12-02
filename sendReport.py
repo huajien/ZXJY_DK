@@ -62,7 +62,7 @@ def report(user,uid,token):
         while retry_count <= 3:
             dailyRreportContent = gptReport.gptConfig(
                 f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}日{jobTitleReturnData}"
-                f"实习的工作日报只要一小段60字左右，返回一段json英文的数据数据中有 实习项目，实习记录，实习总结。只要三个不要其他的数据")
+                f"实习的工作日报只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。只要三个不要其他的数据")
             try:
                 if isinstance(dailyRreportContent, dict):
                     RreportData = dailyRreportContent
@@ -90,7 +90,11 @@ def report(user,uid,token):
             except Exception as error:
                 print(f"日报发生错误异常未找到第{retry_count}重试：{error}")
                 retry_count += 1
+            except json.JSONDecodeError as error:
+                print(f"ChatGPT JSON中解析错误: {error}")
+                retry_count += 1
             if retry_count == 3:
+                print(f"日报填写失败，尝试第{retry_count}重试")
                 pushMessage.pushMessage('职校家园日报失败',
                 f"日报填写失败，尝试第{retry_count}重试",user["pushKey"])
                 break
@@ -132,7 +136,11 @@ def report(user,uid,token):
                     except Exception as error:
                         print(f"周报发生错误异常未找到第{retry_count}重试：{error}")
                         retry_count += 1
+                    except json.JSONDecodeError as error:
+                        print(f"ChatGPT JSON中解析错误: {error}")
+                        retry_count += 1
                     if retry_count == 3:
+                        print(f"周报填写失败，尝试第{retry_count}重试")
                         pushMessage.pushMessage('职校家园周报失败',
                         f"周报填写失败，尝试第{retry_count}重试",user["pushKey"])
                         break
@@ -173,7 +181,11 @@ def report(user,uid,token):
                 except Exception as error:
                     print(f"日报发生错误异常未找到第{retry_count}重试：{error}")
                     retry_count += 1
+                except json.JSONDecodeError as error:
+                    print(f"ChatGPT JSON中解析错误: {error}")
+                    retry_count += 1
                 if retry_count == 3:
+                    print(f"月报填写失败，尝试第{retry_count}重试")
                     pushMessage.pushMessage('职校家园月报失败',
                     f"月报填写失败，尝试第{retry_count}重试",user["pushKey"])
                     break
