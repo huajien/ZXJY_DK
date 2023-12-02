@@ -12,7 +12,7 @@ def LoadUserConfig(user):
         print(user['remark'], '未启用打卡，即将跳过')
     else:
         print('用户' + user['remark'], '已启用，即将打卡')
-        delay = int(random.uniform(60, 120))
+        delay = int(random.uniform(30, 60))
         # delay = int(1)
         print(f'{user["remark"]} 延时 ' + str(delay) + ' 秒')
         time.sleep(delay)
@@ -37,7 +37,7 @@ def LoadUserConfig(user):
         print(user['report'], '未启用日报周报月报，即将跳过')
     else:
         print('用户' + user['remark'], '已启用，即将填写日报周报月报')
-        delay = int(random.uniform(60, 120))
+        delay = int(random.uniform(10, 30))
         # delay = int(1)
         print(f'{user["remark"]} 延时 ' + str(delay) + ' 秒')
         time.sleep(delay)
