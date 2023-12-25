@@ -62,7 +62,7 @@ def report(user,uid,token):
         while retry_count <= 3:
             dailyRreportContent = gptReport.gptConfig(
                 f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}日{jobTitleReturnData}"
-                f"实习的工作日报只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。只要三个不要其他的数据")
+                f"实习的工作日报，只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。只要三个不要其他的数据")
             try:
                 if isinstance(dailyRreportContent, dict):
                     RreportData = dailyRreportContent
@@ -105,7 +105,7 @@ def report(user,uid,token):
             while retry_count <= 3:
                     weeklyRreportContent = gptReport.gptConfig(
                         f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}每周{jobTitleReturnData}"
-                        f"实习的工作周报只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。三个不要其他的数据")
+                        f"实习的工作周报，只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。三个不要其他的数据")
                     try:
                         if isinstance(weeklyRreportContent, dict):
                             RreportData = weeklyRreportContent
@@ -151,7 +151,7 @@ def report(user,uid,token):
             while retry_count <= 3:
                 monthlyRreportContent = gptReport.gptConfig(
                     f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}每周{jobTitleReturnData}"
-                    f"实习的工作月报告只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。三个不要其他的数据")
+                    f"实习的工作月报告，只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。三个不要其他的数据")
                 try:
                     if isinstance(monthlyRreportContent, dict):
                         RreportData = monthlyRreportContent
