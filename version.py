@@ -9,7 +9,7 @@ def AppVersion(pushKey):
     response = requests.get(url, headers=header).content
     description = BeautifulSoup(response, 'html.parser').find('meta', attrs={'name': 'description'})['content']
     result = float(description.split('#')[0].replace(' ', ''))
-    if result <= 0.47:
+    if result <= 0.48:
         url = 'https://app.mi.com/details?id=com.wyl.exam'
         try:
             response = requests.get(url, headers=header)
