@@ -59,7 +59,7 @@ def report(user,uid,token):
     if jobTitleState:
         # ----------------------------日报
         retry_count = 1
-        while retry_count <= 3:
+        while retry_count <= 10:
             dailyRreportContent = gptReport.gptConfig(
                 f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}日{jobTitleReturnData}"
                 f"实习的工作日报，只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。只要三个不要其他的数据")
@@ -93,16 +93,16 @@ def report(user,uid,token):
             except json.JSONDecodeError as error:
                 print(f"ChatGPT JSON中解析错误: {error}")
                 retry_count += 1
-            if retry_count == 3:
+            if retry_count == 10:
                 print(f"日报填写失败，尝试第{retry_count}重试")
                 pushMessage.pushMessage('职校家园日报失败',
-                f"日报填写失败，尝试第{retry_count}重试",user["pushKey"])
+                f"日报填写失败，请联系管理员重新填写日报，尝试第{retry_count}重试",user["pushKey"])
                 break
         # ----------------------------周报
         if datetime.datetime.now().weekday() == 6:
             print(f"用户{user['remark']} 开启周报")
-            retry_count = 0
-            while retry_count <= 3:
+            retry_count = 1
+            while retry_count <= 10:
                     weeklyRreportContent = gptReport.gptConfig(
                         f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}每周{jobTitleReturnData}"
                         f"实习的工作周报，只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。三个不要其他的数据")
@@ -139,18 +139,18 @@ def report(user,uid,token):
                     except json.JSONDecodeError as error:
                         print(f"ChatGPT JSON中解析错误: {error}")
                         retry_count += 1
-                    if retry_count == 3:
+                    if retry_count == 10:
                         print(f"周报填写失败，尝试第{retry_count}重试")
                         pushMessage.pushMessage('职校家园周报失败',
-                        f"周报填写失败，尝试第{retry_count}重试",user["pushKey"])
+                        f"周报填写失败，请联系管理员重新填写周报，尝试第{retry_count}重试",user["pushKey"])
                         break
         # ---------------------------- 月报
         if isLastDayOfMonth:
             print(f"用户{user['remark']} 开启月报")
-            retry_count = 0
-            while retry_count <= 3:
+            retry_count = 1
+            while retry_count <= 10:
                 monthlyRreportContent = gptReport.gptConfig(
-                    f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{time.strftime('%d')}每周{jobTitleReturnData}"
+                    f"写一个{time.strftime('%Y')}年{time.strftime('%m')}月{jobTitleReturnData}"
                     f"实习的工作月报告，只要一小段60字左右，返回一段json中文的数据数据中有 实习项目，实习记录，实习总结。三个不要其他的数据")
                 try:
                     if isinstance(monthlyRreportContent, dict):
@@ -184,10 +184,10 @@ def report(user,uid,token):
                 except json.JSONDecodeError as error:
                     print(f"ChatGPT JSON中解析错误: {error}")
                     retry_count += 1
-                if retry_count == 3:
+                if retry_count == 10:
                     print(f"月报填写失败，尝试第{retry_count}重试")
                     pushMessage.pushMessage('职校家园月报失败',
-                    f"月报填写失败，尝试第{retry_count}重试",user["pushKey"])
+                    f"月报填写失败，请联系管理员重新填写月报，尝试第{retry_count}重试",user["pushKey"])
                     break
 if __name__ == '__main__':
     main.main()
