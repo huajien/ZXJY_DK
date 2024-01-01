@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.47-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.48-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -198,6 +198,12 @@ log/$(date +"\%Y-\%m-\%d").log 2>&1
 
 
 ## 更新信息
+
+###  2024年1月1日更新
+- 新年快乐🎉<br>
+- 更新说明文档<br>
+- sendReport.py**报告重试次数更新为10次，优化提示词**<br>
+- **版本升级至0.48**：版本号更新，日报重试次数更新为10次，月报错误等<br>
 
 ###  2023年12月25日更新
 - 更新说明文档<br>
