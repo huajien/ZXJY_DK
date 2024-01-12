@@ -3,13 +3,13 @@ import requests
 import pushMessage
 
 def AppVersion(pushKey):
-    AdaptedVersion = 'v1.4.1'
+    AdaptedVersion = 'v1.4.4'
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     url = "https://www.yuque.com/huaji-kiyl5/kb/br0dfuykwe7ryku3"
     response = requests.get(url, headers=header).content
     description = BeautifulSoup(response, 'html.parser').find('meta', attrs={'name': 'description'})['content']
     result = float(description.split('#')[0].replace(' ', ''))
-    if result <= 0.48:
+    if result <= 0.49:
         url = 'https://app.mi.com/details?id=com.wyl.exam'
         try:
             response = requests.get(url, headers=header)
