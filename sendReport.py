@@ -117,7 +117,7 @@ def report(user,uid,token):
                             data = {
                                 "uid": uid,
                                 "starttime": (datetime.date.today() - datetime.timedelta(
-                                    days=7)).strftime('%Y-%m-%d'),
+                                    days=6)).strftime('%Y-%m-%d'),
                                 "project": RreportData['实习项目'],
                                 "address": user['address'],
                                 "record": RreportData['实习记录'],
