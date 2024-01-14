@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.49-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.491-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -198,6 +198,13 @@ log/$(date +"\%Y-\%m-\%d").log 2>&1
 
 
 ## 更新信息
+
+
+###  2024年1月14日更新
+- 感谢 [321930869](https://github.com/321930869) 提出问题和解决方案目<br>
+- **sendReport.py** 已解决周报开始时间计算逻辑错误<br>
+- **版本升级至0.491**：版本号更新<br>
+
 
 ###  2024年1月13日更新
 - version.py**调整为1.4.4版本**<br>
