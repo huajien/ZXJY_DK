@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.491-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.492-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
@@ -38,7 +38,17 @@
 </div>
 <br>
 
+### 鼓励&赞赏  
+**请作者喝咖啡，让代码飞一会儿！**
+**微信赞赏码！**
+<p align="left">
+  <a href="https://raw.githubusercontent.com/huajien/ZXJY_DK/master/IMAGES/wx-zanshang.jpg">
+   <img alt="职校家园打卡" src="https://gitee.com/huajien/zhixiao-homepage-notice/raw/master/wx-zanshang.jpg" width="260px">
+   <img alt="职校家园打卡" src="IMAGES/wx-zanshang.jpg" width="260px">
+   <img alt="职校家园打卡" src="https://raw.githubusercontent.com/huajien/ZXJY_DK/master/IMAGES/wx-zanshang.jpg" width="260px">
 
+</a>
+</p>
 
 
 
@@ -198,6 +208,13 @@ log/$(date +"\%Y-\%m-\%d").log 2>&1
 
 
 ## 更新信息
+###  2024年1月17日更新
+- 增加微信赞赏码 <br>
+- 新增app端 暂时只有打卡功能<br>
+- **punchCard.py** 修复打卡使用参数错误 phonetype <br>
+- **版本升级至0.492**：版本号更新<br>
+
+
 
 
 ###  2024年1月14日更新
