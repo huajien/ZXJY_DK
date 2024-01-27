@@ -4,7 +4,7 @@ import pushMessage
 
 def AppVersion(pushKey):
     AdaptedVersion = 'v1.4.4'
-    ZxjyVersion = 0.493
+    ZxjyVersion = 0.193
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     url = "https://www.yuque.com/huaji-kiyl5/kb/br0dfuykwe7ryku3"
     response = requests.get(url, headers=header).content
@@ -30,4 +30,4 @@ def AppVersion(pushKey):
             print(f'职校家园版本获取错误{error}')
             return False, f'职校家园版本获取失败{error}'
     else:
-        print(f"当前版本{ZxjyVersion}最新版本{result} 请访问 https://github.com/huajien/ZXJY_DK?tab=readme-ov-file#在线更新")
+        print(f"当前版本{ZxjyVersion}最新版本{result} 请访问 https://github.com/huajien/ZXJY_DK?tab=readme-ov-file#%E5%9C%A8%E7%BA%BF%E6%9B%B4%E6%96%B0")
