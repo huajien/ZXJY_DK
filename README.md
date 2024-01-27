@@ -4,10 +4,11 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.492-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.493-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
-  <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=red&style=flat">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=huajien.ZXJY_DK">
+  <img src="https://img.shields.io/github/issues/huajien/ZXJY_DK?color=teal&style=flat">
   <img src="https://img.shields.io/github/forks/huajien/ZXJY_DK?color=teal&style=flat">
 </p>
 
@@ -15,10 +16,15 @@
   <img src="https://img.shields.io/badge/Author-HUAJIEN-cyan?style=flat">
   <img src="https://img.shields.io/badge/Open Source-Yes-cyan?style=flat">
   <img src="https://img.shields.io/badge/Written In-Bash-cyan?style=flat">
+
 </p>
 
 <div align="center">
   <h3>
+     <a href="#在线更新">
+      在线更新
+    </a>
+    <span> • </span>
     <a href="#使用教程">
       使用教程
     </a>
@@ -82,6 +88,10 @@ ZXJY_DK没有代理<br>
 没人强迫你使用本项目<br>
 喷我随意此项目仅用来分析app学习<br>
 
+## 在线更新
+```bash
+git fetch --all && git reset --hard origin/master
+```
 
 
 ## 使用教程
@@ -135,14 +145,26 @@ python3 addUsers.py
 ### 配置每天定时自动打卡
 
 Linux 下使用推荐使用 `crontab`
+Windows 定时任务 不推荐使用（服务器除外）
 
 ```bash
 crontab -e
 最后下面添加
 
-56 7 * * * cd ~/ZXJY_DK && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+56 7 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
 ```
 
+
+```bash
+解释上面crontab
+
+
+每天早上7点56分，在~/ZXJY_DK目录下执行以下操作：
+执行git fetch --all命令，从远程仓库中获取最新的更新。
+执行git reset --hard origin/master命令，将本地分支指向与远程origin/master分支相同的位置，并完全覆盖本地分支的内容。
+执行mkdir -p log命令，如果不存在log目录则创建一个。
+执行python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1命令，将main.py的输出追加到以当前日期为名称的日志文件中。
+```
 例子：
 ```text
 
@@ -160,23 +182,6 @@ crontab -e
     |    +-------------------- hour (0 - 23)
     +------------------------- minute (0 - 59)
 ```
-```bash
-解释上面代码
-56 7 * * *  
-代表每天早上7点56开始执行 
-可以查一下crontab相关知识
-
-cd ~/ZXJY_DK 
-是到打卡代码路径
-
-mkdir -p log 
-如果不存在log目录就创建一个log路径
-
-log/$(date +"\%Y-\%m-\%d").log 2>&1 
-是将运行的结果存到log/2023-11-24.log
-日志文件里面可以查看每日的信息
-```
-
 
 整体**userData.json**文件结构
 ```python
@@ -208,6 +213,14 @@ log/$(date +"\%Y-\%m-\%d").log 2>&1
 
 
 ## 更新信息
+###  2024年1月27日更新
+- 更新说明文档<br>
+- 优化crontab运行前自动更新代码<br>
+- **version** 优化版本控制<br>
+- **main.py** inputimeout改为30秒 <br>
+- **版本升级至0.493**：版本号更新<br>
+
+
 ###  2024年1月17日更新
 - 增加微信赞赏码 <br>
 - 新增app端 暂时只有打卡功能<br>
