@@ -4,12 +4,13 @@ import pushMessage
 
 def AppVersion(pushKey):
     AdaptedVersion = 'v1.4.4'
+    ZxjyVersion = 0.493
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     url = "https://www.yuque.com/huaji-kiyl5/kb/br0dfuykwe7ryku3"
     response = requests.get(url, headers=header).content
     description = BeautifulSoup(response, 'html.parser').find('meta', attrs={'name': 'description'})['content']
     result = float(description.split('#')[0].replace(' ', ''))
-    if result <= 0.492:
+    if result <= ZxjyVersion:
         url = 'https://app.mi.com/details?id=com.wyl.exam'
         try:
             response = requests.get(url, headers=header)
@@ -29,4 +30,4 @@ def AppVersion(pushKey):
             print(f'职校家园版本获取错误{error}')
             return False, f'职校家园版本获取失败{error}'
     else:
-        print(f"代码有更新请前往 https://github.com/huajien/ZXJY_DK 更新代码")
+        print(f"当前版本{ZxjyVersion}最新版本{result} 请访问 https://github.com/huajien/ZXJY_DK?tab=readme-ov-file#在线更新")
