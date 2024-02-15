@@ -119,8 +119,13 @@ git fetch --all && git reset --hard origin/master
 
 ```bash
 cd ~
-git clone https://github.huajinet.cf/https://github.com/huajien/ZXJY_DK
+git clone https://mirror.ghproxy.com/https://github.com/huajien/ZXJY_DK
 ```
+不打卡的请使用
+git remote set-url origin https://mirror.ghproxy.com/https://github.com/huajien/ZXJY_DK
+将源换位https://mirror.ghproxy.com
+之前的域名商关了
+
 
 2. 安装依赖 <br>
 
