@@ -121,10 +121,11 @@ git fetch --all && git reset --hard origin/master
 cd ~
 git clone https://mirror.ghproxy.com/https://github.com/huajien/ZXJY_DK
 ```
-不打卡的请使用
+不打卡的请使用命令<br>
+```
 git remote set-url origin https://mirror.ghproxy.com/https://github.com/huajien/ZXJY_DK
-将源换位https://mirror.ghproxy.com
-之前的域名商关了
+```
+将源换位https://mirror.ghproxy.com 之前的域名商关了<br>
 
 
 2. 安装依赖 <br>
