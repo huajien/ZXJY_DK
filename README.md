@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.493-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.494-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=huajien.ZXJY_DK">
@@ -210,7 +210,7 @@ crontab -e
     "longitude": "113.752490",
     "latitude": "34.768420",
     #pushplus的推送key
-    "pushKey": "f0fe8fdb8d49490fa6213fc94b9365de",
+    "pushKey": "f0fe8fdb8d49490fa6213fc94b9365da",
     #报告开关
     "report": True
   }
@@ -219,6 +219,19 @@ crontab -e
 
 
 ## 更新信息
+
+###  2024年2月24日更新
+- 更新说明文档<br>
+- 建议将crontab 替换如下根据自身情况调整<br>
+```bash
+56 7 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+```
+- **version** 升级为v1.4.5<br>
+- **版本升级至0.494**：版本号更新<br>
+
+
+
+
 ###  2024年1月27日更新
 - 更新说明文档<br>
 - 优化crontab运行前自动更新代码<br>
