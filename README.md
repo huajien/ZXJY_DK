@@ -220,6 +220,14 @@ crontab -e
 
 ## 更新信息
 
+### 2024年3月28日更新
+- **version** 升级为v1.4.6<br>
+- **版本升级至0.495**：版本号更新<br>
+- 建议将crontab 替换如下根据自身情况调整<br>
+```bash
+56 7 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+```
+
 ###  2024年2月24日更新
 - 更新说明文档<br>
 - 建议将crontab 替换如下根据自身情况调整<br>
