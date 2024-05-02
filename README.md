@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.494-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.496-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=huajien.ZXJY_DK">
@@ -157,7 +157,7 @@ Windows 定时任务 不推荐使用（服务器除外）
 crontab -e
 最后下面添加
 
-56 7 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
 ```
 
 
@@ -165,7 +165,7 @@ crontab -e
 解释上面crontab
 
 
-每天早上7点56分，在~/ZXJY_DK目录下执行以下操作：
+每天早上10点26分，在~/ZXJY_DK目录下执行以下操作：
 执行git fetch --all命令，从远程仓库中获取最新的更新。
 执行git reset --hard origin/master命令，将本地分支指向与远程origin/master分支相同的位置，并完全覆盖本地分支的内容。
 执行mkdir -p log命令，如果不存在log目录则创建一个。
@@ -209,8 +209,8 @@ crontab -e
     #经纬度
     "longitude": "113.752490",
     "latitude": "34.768420",
-    #pushplus的推送key
-    "pushKey": "f0fe8fdb8d49490fa6213fc94b9365da",
+    #pushplus的推送key用于通知打卡成功和失败记得认真填写哦
+    "pushKey": "fffe8fdb8d49490fa6213fc94b9365da",
     #报告开关
     "report": True
   }
@@ -220,19 +220,29 @@ crontab -e
 
 ## 更新信息
 
+
+### 2024年5月2日更新
+- **版本升级至0.496**：版本号更新<br>
+- 修复gpt 日报周报月报失败问题<br>
+- **此版本强制升级**<br>
+- 建议将crontab 替换如下 可以自动更新<br>
+```bash
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+```
+
 ### 2024年3月28日更新
 - **version** 升级为v1.4.6<br>
 - **版本升级至0.495**：版本号更新<br>
 - 建议将crontab 替换如下根据自身情况调整<br>
 ```bash
-56 7 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
 ```
 
 ###  2024年2月24日更新
 - 更新说明文档<br>
 - 建议将crontab 替换如下根据自身情况调整<br>
 ```bash
-56 7 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
 ```
 - **version** 升级为v1.4.5<br>
 - **版本升级至0.494**：版本号更新<br>
