@@ -85,9 +85,8 @@ def gptConfig(Position):
         openai.api_key = api_key
         openai.api_base = "https://api.chatanywhere.com.cn/v1"
         ReturnGptData = gpt_35_api_stream([{'role': 'user', 'content': f'{Position}'}, ])
-        # print(ReturnGptData["content"])
         time.sleep(int(random.uniform(15, 30)))
-        return ReturnGptData["content"]
+        return ReturnGptData.get("content", ReturnGptData)
 
 if __name__ == '__main__':
     main.main()
