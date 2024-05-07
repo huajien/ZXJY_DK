@@ -15,14 +15,10 @@ def gpt_35_api_stream(messages: list):
         response = openai.ChatCompletion.create(
             model='gpt-3.5-turbo',
             messages=messages,
-            stream=True,
+            stream=False,
         )
-        completion = {'role': '', 'content': ''}
-        for event in response:
-            if event['choices'][0]['finish_reason'] == 'stop':
-                return completion  # 直接返回结果
-            for delta_k, delta_v in event['choices'][0]['delta'].items():
-                completion[delta_k] += delta_v
+        # print(response['choices'][0]['message']['content'])
+        return response.choices[0].message.content
     except Exception as err:
         return {'error': f'OpenAI API 异常: {err}'}
 
@@ -86,7 +82,7 @@ def gptConfig(Position):
         openai.api_base = "https://api.chatanywhere.com.cn/v1"
         ReturnGptData = gpt_35_api_stream([{'role': 'user', 'content': f'{Position}'}, ])
         time.sleep(int(random.uniform(15, 30)))
-        return ReturnGptData.get("content", ReturnGptData)
+        return ReturnGptData
 
 if __name__ == '__main__':
     main.main()
