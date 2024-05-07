@@ -99,7 +99,7 @@ def report(user,uid,token):
                 f"日报填写失败，请联系管理员重新填写日报，尝试第{retry_count}重试",user["pushKey"])
                 break
         # ----------------------------周报
-        if datetime.datetime.now().weekday() == 6:
+        if datetime.datetime.now().weekday() == 4:
             print(f"用户{user['remark']} 开启周报")
             retry_count = 1
             while retry_count <= 10:
