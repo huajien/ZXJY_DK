@@ -159,6 +159,13 @@ crontab -e
 
 26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
 ```
+跳过周六周日 执行的crontab 
+<br>
+每天周1-周5 月底最后一天运行
+```bash
+26 10 L * 1-5 cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+
+```
 
 
 ```bash
