@@ -4,7 +4,7 @@
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.496-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.497-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=huajien.ZXJY_DK">
@@ -226,7 +226,12 @@ crontab -e
 
 
 ## 更新信息
-
+### 2024年5月12日更新
+- **版本升级至0.497**：版本号更新<br>
+- 建议将crontab 替换如下 可以自动更新<br>
+```bash
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+```
 
 ### 2024年5月2日更新
 - **版本升级至0.496**：版本号更新<br>
