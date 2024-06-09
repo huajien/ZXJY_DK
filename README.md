@@ -2,6 +2,7 @@
 <h3 align="center">职校家园自动打卡</h3>
 <h3 align="center">根据岗位自动填写日报内容由ChatGPT 生成</h3>
 <h3 align="center">喜欢的话可以点Star ⭐</h3>
+<h2 align="center"><b>随缘更新太忙了，也没有测试账号了。</b></h2>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-0.498-green?style=flat">
