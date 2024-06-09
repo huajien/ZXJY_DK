@@ -3,7 +3,7 @@ import requests
 import pushMessage
 
 def AppVersion(pushKey):
-    AdaptedVersion = 'v1.4.8'
+    AdaptedVersion = 'v1.4.9'
     ZxjyVersion = 0.497
     print('正在检查版本...')
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
