@@ -2,10 +2,10 @@ import requests
 import time
 import random
 def get_apitoken():
-    url = "https://sxbaapp.zcj.jyt.henan.gov.cn/api/getApitoken.ashx"
+    url = "https://sxbaapp.dxtxl.com/api/getApitoken.ashx"
     headers = {
         "os": "android",
-        "appversion": "59",
+        "appversion": "65",
         "timestamp": str(int(time.time() * 1000)),
         "cl_ip": f"192.168.31.{random.randint(10, 200)}",
         "content-type": "application/json;charset=utf-8",

@@ -12,7 +12,7 @@ def header(user,token,Sign,data):
     return {
         "os": "android",
         "phone": user["deviceModel"],
-        "appversion": "59",
+        "appversion": "65",
         "sign": Sign,
         "timestamp": str(int(time.time() * 1000)),
         "token": token,
@@ -24,7 +24,7 @@ def header(user,token,Sign,data):
     }
 
 def sendReportData(user,RreportData,headers,data):
-    url = "https://sxbaapp.zcj.jyt.henan.gov.cn/api/ReportHandler.ashx"
+    url = "https://sxbaapp.dxtxl.com/api/ReportHandler.ashx"
     try:
         response = requests.post(url, headers=headers, data=json.dumps(data))
         response.raise_for_status()

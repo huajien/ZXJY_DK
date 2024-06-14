@@ -24,7 +24,7 @@ def login(user, token):
     headers = {
         "os": "android",
         "phone": user["deviceModel"],
-        "appversion": "59",
+        "appversion": "65",
         "sign": Sign,
         "timestamp": str(int(time.time() * 1000)),
         "token": token,
@@ -34,7 +34,7 @@ def login(user, token):
         "accept-encoding": "gzip, deflate",
         "user-agent": "okhttp/3.14.9"
     }
-    url = "https://sxbaapp.zcj.jyt.henan.gov.cn/api/relog.ashx"
+    url = "https://sxbaapp.dxtxl.com/api/relog.ashx"
     try:
         response = requests.post(url, headers=headers, data=json.dumps(data))
         response.raise_for_status()

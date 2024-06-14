@@ -32,7 +32,7 @@ def getJobTitle(user,uid,token):
     headers = {
         "os": "android",
         "phone": user["deviceModel"],
-        "appversion": "59",
+        "appversion": "65",
         "sign": Sign,
         "timestamp": str(int(time.time() * 1000)),
         "token": token,
@@ -42,7 +42,7 @@ def getJobTitle(user,uid,token):
         "accept-encoding": "gzip, deflate",
         "user-agent": "okhttp/3.14.9"
     }
-    url = "https://sxbaapp.zcj.jyt.henan.gov.cn/api/shixi_student_check.ashx"
+    url = "https://sxbaapp.dxtxl.com/api/shixi_student_check.ashx"
     try:
         response = requests.post(url, headers=headers, data=json.dumps(data))
         response.raise_for_status()
