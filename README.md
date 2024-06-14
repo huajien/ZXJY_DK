@@ -5,7 +5,7 @@
 <h2 align="center"><b>随缘更新太忙了，也没有测试账号了。</b></h2>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.498-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.499-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=huajien.ZXJY_DK">
@@ -227,6 +227,15 @@ crontab -e
 
 
 ## 更新信息
+### 2024年6月14日更新
+- **版本升级至0.499**：版本号更新<br>
+- 替换新的职校家园域名
+- app版本晚会更新这个电脑没有安卓开发环境我需要配置一下找时间更新
+- 建议将crontab 替换如下 可以自动更新<br>
+```bash
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+```
+
 ### 2024年6月9日更新
 - **版本升级至0.498**：版本号更新<br>
 - 感谢[XYZ](https://github.com/321930869)建议升级 gpt 的Prompt [[SUGGESTION] 优化 ChatGPT 生成实习报告的提示词 #21
