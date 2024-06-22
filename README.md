@@ -27,11 +27,11 @@
       在线更新
     </a>
     <span> • </span>
-    <a href="https://github.com/huajien/ZXJY_DK/blob/master/tutorials.md">
+    <a href="https://github.com/huajien/ZXJY_DK/blob/master/docs/tutorials.md">
       使用教程
     </a>
     <span> • </span>
-    <a href="https://github.com/huajien/ZXJY_DK/blob/master/upload_log.md">
+    <a href="https://github.com/huajien/ZXJY_DK/blob/master/docs/upload_log.md">
       更新信息
     </a>
     <span> • </span>
