@@ -6,7 +6,7 @@
 <h3 align="center">如果有其他打卡软件发邮箱看到就可以帮忙</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.5-green?style=flat">
+  <img src="https://img.shields.io/badge/Version-0.501-green?style=flat">
   <img src="https://img.shields.io/github/license/huajien/ZXJY_DK?style=flat">
   <img src="https://img.shields.io/github/stars/huajien/ZXJY_DK?style=flat">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=huajien.ZXJY_DK">

@@ -1,4 +1,12 @@
 ## 更新信息
+### 2024年7月2日晚上更新
+- **版本升级至0.501**：版本号更新<br>
+- 优化bug
+- 优化 ai 调用返回数据处理
+- 建议将crontab 替换如下 可以自动更新<br>
+```bash
+26 10 * * * cd ~/ZXJY_DK && git fetch --all && git reset --hard origin/master && mkdir -p log && python3 main.py >> log/$(date +"\%Y-\%m-\%d").log 2>&1
+```
 ### 2024年7月2日更新
 - **版本升级至0.5**：版本号更新<br>
 - 优化更新版本控制
