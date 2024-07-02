@@ -7,7 +7,7 @@ import time
 import datetime
 import main
 import requests
-
+import re
 def header(user,token,Sign,data):
     return {
         "os": "android",
@@ -62,10 +62,12 @@ def report(user,uid,token):
         while retry_count <= 10:
             dailyRreportContent = gptReport.gptConfig(jobTitleReturnData,"日报")
             try:
-                if isinstance(dailyRreportContent, dict):
-                    RreportData = dailyRreportContent
-                else:
-                    RreportData = json.loads(dailyRreportContent)
+                pattern = r'\{([^{}]+)\}'
+                match = re.search(pattern, dailyRreportContent, re.DOTALL)
+
+                if match:
+                    formatData = '{' + match.group(1) + '}'
+                    RreportData = json.loads(formatData)
                 if RreportData['实习项目'] and RreportData['实习记录'] and \
                         RreportData['实习总结']:
                     print(f"日报信息gpt已完成准备填写日报")
@@ -103,10 +105,12 @@ def report(user,uid,token):
             while retry_count <= 10:
                     weeklyRreportContent = gptReport.gptConfig(jobTitleReturnData,"周报")
                     try:
-                        if isinstance(weeklyRreportContent, dict):
-                            RreportData = weeklyRreportContent
-                        else:
-                            RreportData = json.loads(weeklyRreportContent)
+                        pattern = r'\{([^{}]+)\}'
+                        match = re.search(pattern, weeklyRreportContent, re.DOTALL)
+                        if match:
+                            formatData = '{' + match.group(1) + '}'
+                            RreportData = json.loads(formatData)
+
                         if RreportData['实习项目'] and RreportData['实习记录'] and \
                                 RreportData['实习总结']:
                             print(f"周报信息gpt已完成")
@@ -147,11 +151,14 @@ def report(user,uid,token):
             while retry_count <= 10:
                 monthlyRreportContent = gptReport.gptConfig(jobTitleReturnData,"月报")
                 try:
-                    if isinstance(monthlyRreportContent, dict):
-                        RreportData = monthlyRreportContent
-                    else:
-                        RreportData = json.loads(monthlyRreportContent)
-                    if all(key in RreportData for key in ['实习项目', '实习记录', '实习总结']):
+                    pattern = r'\{([^{}]+)\}'
+                    match = re.search(pattern, monthlyRreportContent, re.DOTALL)
+
+                    if match:
+                        formatData = '{' + match.group(1) + '}'
+                        RreportData = json.loads(formatData)
+                    if RreportData['实习项目'] and RreportData['实习记录'] and RreportData['实习总结']:
+
                         print(f"月报信息gpt已完成")
                         data = {
                             "uid": uid,
