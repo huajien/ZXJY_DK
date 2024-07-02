@@ -30,7 +30,7 @@ def LoadUserConfig(user):
                     token = loginReturnData["data"]["UserToken"]
                     punchCard.clockIn(user, uid, token)
             else:
-                print('app版本有变化停止自动打卡请前往\n https://github.com/huajien/ZXJY_DK \n 更新新版本')
+                print('请前往\n https://github.com/huajien/ZXJY_DK \n 更新新版本')
 
 
     if not user["report"]:
@@ -56,7 +56,7 @@ def LoadUserConfig(user):
                     token = loginReturnData["data"]["UserToken"]
                     sendReport.report(user, uid, token)
             else:
-                print('app版本有变化停止自动打卡请前往\n https://github.com/huajien/ZXJY_DK \n 更新新版本')
+                print('请前往\n https://github.com/huajien/ZXJY_DK \n 更新新版本')
 
 if __name__ == '__main__':
     main.main()
